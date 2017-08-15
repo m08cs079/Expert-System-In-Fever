@@ -190,7 +190,7 @@ public class welcom extends javax.swing.JFrame implements ActionListener  {
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Auto-generated method stub
 			String patientname=patient_name.getText();
-			//int id=Integer.parseInt(serial_no.getText());
+			int id=0;
 			boolean fever=fever_.isSelected();
 			boolean headache=head_ache.isSelected();
 			boolean vomiting=vomit.isSelected();
@@ -212,7 +212,7 @@ public class welcom extends javax.swing.JFrame implements ActionListener  {
 	   			Class.forName("com.mysql.jdbc.Driver");
 	   			Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ExpertSystem?useSSL=false","root" ,"password");
 	   			Statement st= myConn.createStatement();
-	   			String sqlQuery = "insert into patient values('"+patientname+"',"+fever+","+headache+","+vomiting+","+fe4+","+fe5+","+fe6+","+fe7+","+fe8+","+fe9+","+fe10+","+fe11+","+fe12+","+fe13+","+fe14+","+fe15+")";
+	   			String sqlQuery = "insert into patient values("+id+",'"+patientname+"',"+fever+","+headache+","+vomiting+","+fe4+","+fe5+","+fe6+","+fe7+","+fe8+","+fe9+","+fe10+","+fe11+","+fe12+","+fe13+","+fe14+","+fe15+")";
 	   			System.out.println("Sql query **************************"+sqlQuery);
 	   			int i= st.executeUpdate(sqlQuery);
 	   			
